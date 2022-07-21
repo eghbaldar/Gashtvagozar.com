@@ -1,0 +1,378 @@
+﻿<html>
+<head runat="server">
+     <title>پایگاه گردشگری</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript" > 
+function showdate() { 
+    week= new Array("يكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه") 
+    months = new Array("فروردين","ارديبهشت","خرداد","تير","مرداد","شهريور","مهر","آبان","آذر","دي","بهمن","اسفند"); 
+    a = new Date(); 
+    d= a.getDay(); 
+    day= a.getDate(); 
+    month = a.getMonth()+1; 
+    year= a.getYear(); 
+    if (year== 0){year=2000;} 
+    if (year<100){year +=1900;} 
+    y=1; 
+    for(i=0;i<3000;i+=4) { 
+        if (year==i) {y=2;} 
+        } 
+    for(i=1;i<3000;i+=4) { 
+        if (year==i) {y=3;} 
+        } 
+if (y==1) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<21)? (month=12, day+=9):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==2) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 20)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<20)? (month=12, day+=10):(month=1, day-=19);   break; 
+            case 4: (day<20)? (month=1, day+=12):(month=2, day-=19);   break; 
+            case 5: (day<21)? (month=2, day+=11):(month=3, day-=20);   break; 
+            case 6: (day<21)? (month=3, day+=11):(month=4, day-=20); break; 
+            case 7: (day<22)? (month=4, day+=10):(month=5, day-=21);   break; 
+            case 8: (day<22)? (month=5, day+=10):(month=6, day-=21);   break; 
+            case 9: (day<22)? (month=6, day+=10):(month=7, day-=21);  break; 
+            case 10:(day<22)? (month=7, day+=9):(month=8, day-=21);    break; 
+            case 11:(day<21)? (month=8, day+=10):(month=9, day-=20);   break; 
+            case 12:(day<21)? (month=9, day+=10):(month=10, day-=20);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==3) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<20)? (month=10, day+=11):(month=11, day-=19); break; 
+            case 2: (day<19)? (month=11, day+=12):(month=12, day-=18); break; 
+            case 3: (day<21)? (month=12, day+=10):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+document.write(week[d]+" "+day+" "+months[month-1]+" "+ year); 
+} 
+
+	function f1(){
+		var d=new Date();
+		document.all.ss1.innerHTML=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+		setTimeout("f1()",1000);
+	}
+
+</script>
+<style type="text/css">
+<!--
+body {    
+	margin-top: 0px;
+	background-image: url(images/bbg.jpg);
+}
+.style1 {
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+	font-size: 8px;
+	font-weight: bold;
+}
+.style4 {color: #003366}
+.style11 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; }
+.style12 {color: #FFFFFF}
+.style19 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; }
+.style23 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; font-weight: bold; }
+.style28 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; font-weight: bold; }
+.style36 {font-size: 9px}
+.style37 {color: #CCFF00}
+.style38 {color: #CCCC00}
+.style39 {color: #CC9900}
+.style41 {font-size: 9px; font-family: tahoma; }
+.style44 {font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+.style45 {
+	color: #006699;
+	font-weight: bold;
+}
+a.style61:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:hover {
+	text-decoration: none;
+	display: block;
+	background-color: #325E8B;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+a.style61:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.style46 {color: #333333}
+.style47 {font-family: tahoma; font-size: 11px; color: #FFFFFF; }
+.style49 {font-size: 9pt; font-family: tahoma; color: #FFFFFF; }
+a.style60:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:link{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:hover{
+	color: #FDCD01;
+	text-decoration: none;
+}
+a.style62:link {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:active {
+	text-decoration: none;
+	color: #000000;
+}
+.style56 {font-family: tahoma; font-size: 12px; color: #FFFFFF; }
+.style51 {	font-family: tahoma;
+	font-size: 12px;
+}
+.style52 {	color: #FF9900;
+	font-weight: bold;
+}
+.style55 {font-family: tahoma}
+.style15 {color: #FFCC00}
+a.style63:link {
+	text-decoration: none;
+	color: #0066FF;
+}
+a.style63:visited {
+	text-decoration: none;
+	color: #0066FF;
+}
+a.style63:hover {
+	text-decoration: none;
+	color: #0066FF;
+}
+a.style63:active {
+	text-decoration: none;
+	color: #0066FF;
+}
+.style54 {	font-family: tahoma;
+	font-size: 13px;
+}
+.style62 {font-family: tahoma; font-size: 13px; font-weight: bold; }
+.style57 {font-size: 14px}
+.style61 {color: #000000; }
+-->
+</style>
+</head>
+<body onLoad="f1();">
+  
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="right"><img src="../images/top2_1.jpg" alt="Gashtvagozar.com" width="980" height="150" /></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0">
+  <tr>
+    <td width="254" height="25" bgcolor="#990000" ><div align="center"><span class="style47">
+      <script language="javascript" type="text/javascript">showdate()</script>
+      &nbsp;&nbsp;&nbsp;<span id="ss1"> &nbsp; </span> </span></div></td>
+    <td width="62" bgcolor="#990000"></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../link.html" class="style61">&#1662;&#1740;&#1608;&#1606;&#1583; &#1607;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../contact.html" class="style61">&#1578;&#1605;&#1575;&#1587; &#1576;&#1575; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../about.html" class="style61">&#1583;&#1585;&#1576;&#1575;&#1585;&#1607; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1601;&#1585;&#1607;&#1606;&#1711; &#1608; &#1607;&#1606;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../Hotel/Hoteldari.html" class="style61">&#1607;&#1578;&#1604;&#1583;&#1575;&#1585;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1580;&#1607;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="iran.html" class="style61">&#1575;&#1740;&#1585;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../SubNews_Iran.aspx" class="style61">&#1575;&#1582;&#1576;&#1575;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../Default.aspx" class="style61">&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;</a></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" bgcolor="#325E8B" id="Gashtvagozar.com">
+  <tr>
+    <td width="6" valign="top">&nbsp;</td>
+    <td width="184" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="60">
+          <param name="movie" value="../flash/sanaye dasti.swf" />
+          <param name="quality" value="high" />
+          <embed src="../flash/sanaye dasti.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="60"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td background="images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="100">
+          <param name="movie" value="../flash/hotel.swf" />
+          <param name="quality" value="high" />
+          <embed src="../flash/hotel.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="100"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td background="images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td background="images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="4" valign="top">&nbsp;</td>
+    <td colspan="4" valign="top"><table width="99%" height="456" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="19" colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="19" colspan="2" bgcolor="#9BBCDD"><div align="center"><span class="style62">استان اردبیل </span></div></td>
+      </tr>
+      <tr>
+        <td width="51%" rowspan="2" bgcolor="#FFFFFF"><table width="396" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="89">&nbsp;</td>
+              <td width="291"><table width="120" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+                  <span dir="rtl"><p align="justify" class="style54">در استان اردبيل ذخائري از پوكه معدني ، سنگ آهك ، تراورتن ، مرمريت ، سنگ لاشه ، كائولن وجو دارد كه به نوعي در اقتصاد استان و اشتغال زايي نقش دارند.            </span>
+                  <p align="justify" class="style54"><img src="images/AAB03181.jpg" alt="خلخال" width="291" height="449"> </td>
+              <td width="16"><p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p></td>
+            </tr>
+        </table></td>
+        <td width="49%" bgcolor="#FFFFFF"><table width="382" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="106">&nbsp;</td>
+              <td width="101">&nbsp;</td>
+              <td width="79">&nbsp;</td>
+              <td width="84">&nbsp;</td>
+              <td width="12">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="style54"><div align="center"><a href="ardabil-didani.html" class="style63">اماکن دیدنی </a></div></td>
+              <td class="style54"><div align="center"><a href="ardabil-honar.html"  class="style63">فرهنگی و هنری </a></div></td>
+              <td bgcolor="#003366" class="style54"><div align="center" class="style12">اقتصادی</div></td>
+              <td class="style54"><div align="center" class="style61"><a href="ardabil.html"  class="style63">جغرافیایی</a></div></td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+            <hr align="center" width="360" color="#003366">
+            <div align="center"><img src="images/sabalan.jpg" alt="سبلان" width="367" height="238"> </div>
+          <div align="center"><span class="style62"> </span></div></td>
+      </tr>
+      <tr>
+        <td width="49%" height="286" valign="top" bgcolor="#FFFFFF"><table width="382" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="10">&nbsp;</td>
+              <td width="365"><p align="right" class="style62"></td>
+              <td width="10">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><span dir="rtl"><p align="justify" class="style54">جنگل هاي استان اردبيل که عمدتا در محدوده شهرستان هاي نمين خلخال مشگين شهر دامنه کوه هاي سبلان واقع شده اند بسيار تماشايي بوده و از اين نظر به خصوص در مسير جاده هاي اردبيل-آستارا و خلخال-اسالم از زيباي خاصي برخور دارند.
+                مراتع زيبا و جنگلهاي انبوه و مجتمعهاي آب درماني پيشرفته و هتلها و مهمان پذيرهاي مجهز سالانه حدود دو و نيم ميليون گردشگر را از نقاط مختلف ايران و جهان بدين سو مي کشاند.
+                سيماي صنعت اردبيل
+                از صنايع مهم استان مي توان به کارخانه سيمان، کارخانه آرتاويل تاير، کارخانه ريسندگي و بافندگي ، کارخانه آرتا ابزار و آرتا ماشين، کارخانه قند سبلان، آرتا موکت، کارخانه توليد آب معدني، کارخانه نساجي، کارخانه سرنگ سازي و ... اشاره کرد.
+             </p></span> </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+            <p align="right" class="style54"> </td>
+      </tr>
+      <tr>
+        <td colspan="2" valign="top"><span class="style2"><img src="../images/bala.jpg" width="778" height="20"></span></td>
+      </tr>
+    </table>
+    <p class="style11">&nbsp;</p></td>
+    <td width="8">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><div align="right" class="style12"></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" id="Gashtvagozar.com">
+  <tr>
+    <td><img src="../images/end.jpg" width="978" height="10" alt="" /></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="center"><span class="style1">Powered byGashtvagozar web site designer Team </span></div></td>
+  </tr>
+  <tr>
+    <td><div align="center" class="style1">
+      <div align="center">&copy; 2007 All rights reserved <span class="style4">Gashtvagozar.com </span></div>
+    </div></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+﻿<html>
+<head runat="server">
+     <title>پایگاه گردشگری</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript" > 
+function showdate() { 
+    week= new Array("يكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه") 
+    months = new Array("فروردين","ارديبهشت","خرداد","تير","مرداد","شهريور","مهر","آبان","آذر","دي","بهمن","اسفند"); 
+    a = new Date(); 
+    d= a.getDay(); 
+    day= a.getDate(); 
+    month = a.getMonth()+1; 
+    year= a.getYear(); 
+    if (year== 0){year=2000;} 
+    if (year<100){year +=1900;} 
+    y=1; 
+    for(i=0;i<3000;i+=4) { 
+        if (year==i) {y=2;} 
+        } 
+    for(i=1;i<3000;i+=4) { 
+        if (year==i) {y=3;} 
+        } 
+if (y==1) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<21)? (month=12, day+=9):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==2) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 20)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<20)? (month=12, day+=10):(month=1, day-=19);   break; 
+            case 4: (day<20)? (month=1, day+=12):(month=2, day-=19);   break; 
+            case 5: (day<21)? (month=2, day+=11):(month=3, day-=20);   break; 
+            case 6: (day<21)? (month=3, day+=11):(month=4, day-=20); break; 
+            case 7: (day<22)? (month=4, day+=10):(month=5, day-=21);   break; 
+            case 8: (day<22)? (month=5, day+=10):(month=6, day-=21);   break; 
+            case 9: (day<22)? (month=6, day+=10):(month=7, day-=21);  break; 
+            case 10:(day<22)? (month=7, day+=9):(month=8, day-=21);    break; 
+            case 11:(day<21)? (month=8, day+=10):(month=9, day-=20);   break; 
+            case 12:(day<21)? (month=9, day+=10):(month=10, day-=20);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==3) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<20)? (month=10, day+=11):(month=11, day-=19); break; 
+            case 2: (day<19)? (month=11, day+=12):(month=12, day-=18); break; 
+            case 3: (day<21)? (month=12, day+=10):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+document.write(week[d]+" "+day+" "+months[month-1]+" "+ year); 
+} 
+
+	function f1(){
+		var d=new Date();
+		document.all.ss1.innerHTML=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+		setTimeout("f1()",1000);
+	}
+
+</script>
+<style type="text/css">
+<!--
+body {    
+	margin-top: 0px;
+	background-image: url(images/bbg.jpg);
+}
+.style1 {
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+	font-size: 8px;
+	font-weight: bold;
+}
+.style4 {font-family: tahoma; font-size: 11px; color: #003366;}
+.style11 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; }
+.style12 {color: #FFFFFF}
+.style19 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; }
+.style23 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; font-weight: bold; }
+.style28 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; font-weight: bold; }
+.style36 {font-size: 9px}
+.style37 {color: #CCFF00}
+.style38 {color: #CCCC00}
+.style39 {color: #CC9900}
+.style41 {font-size: 9px; font-family: tahoma; }
+.style44 {font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+.style45 {
+	font-family: tahoma;
+	color: #006699;
+	font-size: 14px;
+	font-weight: bold;
+}
+a.style61:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:hover {
+	text-decoration: none;
+	display: block;
+	background-color: #325E8B;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+a.style61:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.style46 {color: #333333}
+.style47 {font-family: tahoma; font-size: 11px; color: #FFFFFF; }
+.style49 {font-size: 9pt; font-family: tahoma; color: #FFFFFF; }
+a.style60:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:link{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:hover{
+	color: #FDCD01;
+	text-decoration: none;
+}
+a.style62:link {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:active {
+	text-decoration: none;
+	color: #000000;
+}
+.style53 {color: #FFFFFF;
+	font-size: 16px;
+	font-family: Tahoma;
+}
+-->
+</style>
+</head>
+<body onLoad="f1();">
+  
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="right"><img src="images/top2_1.jpg" alt="Gashtvagozar.com" width="980" height="150" /></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0">
+  <tr>
+    <td width="254" height="25" bgcolor="#990000" ><div align="center"><span class="style47">
+      <script language="javascript" type="text/javascript">showdate()</script>
+      &nbsp;&nbsp;&nbsp;<span id="ss1"> &nbsp; </span> </span></div></td>
+    <td width="62" bgcolor="#990000"></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="link.html" class="style61">&#1662;&#1740;&#1608;&#1606;&#1583; &#1607;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="contact.html" class="style61">&#1578;&#1605;&#1575;&#1587; &#1576;&#1575; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="about.html" class="style61">&#1583;&#1585;&#1576;&#1575;&#1585;&#1607; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Farhang.html" class="style61">&#1601;&#1585;&#1607;&#1606;&#1711; &#1608; &#1607;&#1606;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Hotel/Hoteldari.html" class="style61">&#1607;&#1578;&#1604;&#1583;&#1575;&#1585;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1580;&#1607;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Iran/iran.html" class="style61">&#1575;&#1740;&#1585;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="SubNews_Iran.aspx" class="style61">&#1575;&#1582;&#1576;&#1575;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Default.aspx" class="style61">&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;</a></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" bgcolor="#325E8B" id="Gashtvagozar.com">
+  <tr>
+    <td width="6" valign="top">&nbsp;</td>
+    <td width="184" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="75">
+              <param name="movie" value="flash/tabligh1.swf" />
+              <param name="quality" value="high" />
+              <embed src="flash/tabligh1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="75"></embed>
+            </object></td>
+      </tr>
+      <tr>
+        <td background="gashtvagozar.com/www/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="60">
+    <param name="movie" value="flash/sanaye dasti.swf" />
+    <param name="quality" value="high" />
+    <embed src="flash/sanaye dasti.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="60"></embed>
+  </object></td>
+      </tr>
+      <tr>
+        <td background="gashtvagozar.com/www/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="100">
+    <param name="movie" value="flash/hotel.swf" />
+    <param name="quality" value="high" />
+    <embed src="flash/hotel.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="100"></embed>
+  </object></td>
+      </tr>
+      <tr>
+        <td background="gashtvagozar.com/www/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="4" valign="top">&nbsp;</td>
+    <td colspan="4" valign="top"><table width="99%" height="362" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="19" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="19" colspan="3" bgcolor="#9BBCDD">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="3%" bgcolor="#FFFFFF">&nbsp;</td>
+        <td width="94%" bgcolor="#FFFFFF"><p align="center" class="style60 style53">&nbsp;</p>
+          <p align="center" class="style60 style53">فلزکاری</p>
+          <p align="center" class="style60 style53"><img src="farhanghonar/p040.jpg" width="271" height="230"></p>
+          <p align="center" class="style59">تـبـر فـلـزي - لـرسـتـان 1000 قـبل از ميلاد</p>
+          <p align="right" class="style60 style58" dir="rtl">شواهـد و مـدارک باستانشناسي اين نکـته را تـائـيـد مي کـند که شمال و مرکز   ايران جزو قديمي ترين مراکز صنايع فـلزکاري جهـان بوده است.  آشکار است که بشر   تـنهـا در سرزميني مي تـوانست به سودمندي فـلز پـي بـبرد که در آن فـلزات و   کانيهـاي آنهـا وجود داشته باشد. ايران از لحاظ طبيعي داراي ذخاير بزرگـي از   کانـيها است. مردم تـمدن هـاي نخستـيـن درهً رودخانه هاي بزرگ مصر، بابل، هـند و   جيحون با تمام پـيـشرفـتهـايي که داشته اند نـتوانستـند اولين فـلز کاران جـهـان   باشـند. حفاريهـاي اخير نشان داده است که فعـاليـتهـاي فلزکاري در تـمدنهـاي   کشورهاي پـيش گـفته شده نسبتا دير شروع شده است. </p>
+          <p align="right" class="style60 style58" dir="rtl">رشته   کوهـهايي که از تـوروس در تـرکـيه تا کرانه هاي جنوبي درياي مازندران کشيده مي شود   سرشار از انواع کانيـهـا و سوخت بود و دانـش فـلزکاري از آنجا به مراکز ديگـر در   آسيا، آفريقا و اروپـا گسترش يافت.  </p>
+          <p align="right" class="style60 style58" dir="rtl">در   شمال ايران يک رشته معـادن مس از قـفـقاز تا پـامير کشيده شده است. ابن حوقل،   جغـرافي دان عـرب از مـعـادن مـس کـان صبـي زاوه، سبزوار و فـخـر داود نـزديـک   مشهـد و بخـارا در ماوراءالنهـر صحبت مي کند. معادن مس کاشان، انارک، اصفهـان و   بخـارا براي خلفاي اسلامي مقارن قـرن نهـم مسيحـي بسيار با اهـميت بود، زيرا از اين   معـادن هـر ساله بـيش از 10000 دينار خراج حاصل مي گـرديد.  </p>
+          <p align="right" class="style60 style58" dir="rtl">مي   تـوانيم چـنين تصور کنيم که صنعـتگـران قـديم براي به دست آوردن مس انواع سنگـهـاي   فـلزي را آزمايش کـرده اند و بـدين تـرتيب تصادفاً آلياژهـاي مس را توليد کرده   اند.  در نيمهً دوم هـزارهً سوم پـيش از مسيح استعـمال فـلز رو به افـزايش گـذاشت.   از گـورستان شوش، تپه حصار، تـپه گـيان و تـپـه گـئوي ابزار مفرغـي و زينت آلات   مفرغي و نقـره اي زياد به دست مي آيد. گـذار از عصر سنگ به مس بسيار تدريجي بود ولي   در ايران عصر مفرغ در 2000 سال پـيش از مسيح بخوبي پـيشرفـت کرده بود. </p>
+          <p align="right" class="style60 style58" dir="rtl">بطوري که از روايات آشوريان برمي آيد ايران در هـزارهً اول پـيش از مسيح محل   تهـيه فـلزات مخـتـلف بود. استعـمال روز افزون آهـن در هـزارهً اول در بـنـياد   اقـتصادي جامعـه اثـر بسياري داشت.  </p>
+          <p align="right" class="style60 style58" dir="rtl">اگـر   درباره مفرغـهـاي لرستان، که در نواحي کوهـستانهاي باختري ايران است، مختصري گـفتگو   نشود، شرحي که ما در بالا دربارهً مفرغ و آهـن ايران داده ايم، کامل نخواهـد شد.    تـقـريـبا از سال 1930 به بعـد تعـداد زيادي اشياء فـلزي زيـبا در بازار عـتـيقه   فروشان جهـان ارائه مي شد که توسط خاک برداران غـير مجاز قاچاق گورستانهاي قديمي   پـيدا شده بود، اين عـده توجه کرده بودند که مقـبره هايي که دور و بر آنهـا به دقـت   با سنگ مفروش شده داراي زيور آلات و هـدايايي است که با مردگـان روزگـاران کـهـن،   که تا کـنون تـمدن آنهـا ناشناخته مانده است، دفـن شده اند. طرح و هـنرهـاي دستي که   روي اين اشياء بکار رفـته چـنان زيبان و دل انگـيز و عـاليست که کارشناسان را به   شگـفتي آورده است. پـاره اي از اين اشيا داراي حـروف آشوري است که تاريخ و ساختـشان   را کاملا مشخص مي کـند.  چـند تا از آنهـا متعـلق به سدهً دوازدهـم و دهـم پـيش از   مسيح است، اما اکـثـراً به سده هـاي هـشتم و هـفتم پـيش از مسيح تعـلق دارند. در   فرهـنگ مادي جـهـان باستان به ندرت مي تـوان قطعـاتي مانـنـد مفـرغـهـاي لرستان   داراي طرح و ترکـيـبي چـنين پـيچـيده و پـيـشرفـته يافت. نفوذ زياد تـمدن آشوريهـا،   هـيتيتهـا، حورانـيـهـا و حتي سکاهـا را مي تـوان در اين اشـيا ديد؛ ولي شکـل و   چهـرهً بسياري از طرحـهـاي تـپـه سيلک نيز در آنهـا به خوبي نمايان است. هـنرمندان   و صنعـتگـران لرستان در مفرغ ريزي استادي تام يافته و هـمچـنـين فن آهـن کاري را   هـم آغاز کرده بـودند. گـويا بـسياري از اشياء مفـرغـي به شيوهً ريخـته گـري دقـيق   با قـالـبگـيري مومي ريخـته شده است. اين اشيا از لحاظ نماياندن جزئيات کار، شکـل و   زيـبايي چـنان هـستـند که تـنها با شيوهً ريخته گري بالا مي توان آنهـا را تهـيه   کرد. </p>
+          <p align="right" class="style60 style58" dir="rtl">از   مادهـا که در سدهً هـفـتم پـيش از مسيح در شمال ايران به پادشاهي رسيده اند کارهـاي   فلزي خيلي کمي به يادگـار مانده ست، گـر چـه پاره اي از اشياء فـلزي که اخيرا از   آذربايجان بدست آمده، ظاهـراً بازگـو کـنـندهً اين معـناست که نفـوذ سکاهـا به   تـدريج کاسته شده و سبک مادهـا در اين دوره جايگـزين آن شده است. هـنگـامي که بـين   سالهـاي 559 و 530 پـيش از مسيح، کوروش کـبـيـر سلطنت ماد و پارس را يکي کرد،   نخستين شاهـنشاهي بزرگ را بوجود آورد. اين شاهـنشاهي در زمان داريوش اول به اوج خود   رسيد. در آن هـنگام مرحلهً نوي از هـنرهـاي صنعـتي پـديد آمد و مواد خام از هـمهً   گـوشه هاي کشور مي رسيد و نيز صنعـتگـران ساير کشورهـا به سوي کاخهاي شوش و تخـت   جـمشيد سرازيز شدند. اين پـيشرفـت تازه در لوحهً يادبودي که بعـنوان " فرمان بنياد   شوش " تهـيه شده است به خوبي ديده مي شود، اين لوحه در مورد فـلزات حاکي است که: زر   از سارديس و بلخ آورده شده و در اينجا ساخـته شده است ... و سيم و مس از مصر ...   زرگـراني که روي طلا کار مي کـردند مادهـا و مصريهـا بودند.  </p>
+          <p align="right" class="style60 style58" dir="rtl">پس   از سقوط شاهـنشاهي هـخامنشي در حلمه اسکـندر، جانشينان اسکـندر مقـدوني، سلوکيهـا،   از اتحـادي که در جـهان مـتمدن آن روز تحت سلطهً تمدن يونان بوجود آمده بود،   ثروتـمند شدند. آنهـا راه هـاي تجاري ميان هـندوچـين و مديترانه را در اختيار   گـرفـتـند. ايران آهـن و مس و قلع و سرب را از معـادن دولتي صادر مي کـرد و فولاد   هـند که از طريق ايران فرستاده مي شد، براي بازرگـانان ايراني متضـمن سود هـنگـفـتي   بود. در مدت پادشاهي پـارتـهـا ( 250 پـيش از مسيح تا 224 پـيش از مسيح ) روم در   تـجارت فـلزات عامل اقـتصادي مهـمي به شمار مي رفت که تمام توليد ايران را به اضافه   کالاهـاي عـبوري از هـند به خود اخـتصاص مي داد. سکه هـاي نقـره پارتـهـا بايد   مقادير بسيار زيادي ضرب شده باشد. هـنگـامي که نويسنده پـيش از جنگ جـهـاني دوم در   ايران مي زيست، سکه هاي چهـار درهـمي پارتي در مناطق دورافـتاده به عـنوان پول بکار   برده مي شد؛ آن هـم فـقـط از لحاظ مقدار نقـره اي بود که در آن وجود داشت.  دودمان   ساساني پس از پـارتـها روي کار آمدند ( 224 - 656 ميلادي ) تـمدن و هـنر و صنايع   دستي هـخامنشي را زنده کردند. فراورده هـاي فلزي ساسانيان در روزهـاي تـيره و تـار   عصر تاريک اروپا به ويژه از طريق بـيزانس به آن قاره وارد شد و به گـونه اي که روش   فـني ما را تحت نـفوذ قـرار داد. آنچـه را که ما امروز هـنر اسلامي مي ناميم در اصل   بر پايهً سنت و مهـارت و استادي صنعـتگـران ساساني است. </p>
+          <div align="right" class="style59">دورهً اسلامي          </div>
+          <p align="right" class="style60 style58" dir="rtl">در   آغاز سدهً نهـم ميلادي اکثـر ايرانيان مسلمان شده بودند. اسلام نيروي الهـام بخـش   جديدي شد. نفـوذ ايرانيان در صنعت و هـنر با عـناصر بيزانسي در بغـداد به هـم آميخت   و در سراسر قلـمرو اسلام گسترش يافت؛ و از يک طرف از خاورميانه تا اسپانـيا و از   سوي ديگـر در آسيا تا مرزهـاي چين و هـند کشيده شد. در عوض هـنر ايراني از سبکـها و   روشهـاي کشورهايي که در آن نفوذ کرده بود توانگـر و برخوردار گـرديد و حاميان درجه   اول صنايع و هـنر، حکـمرانان و سلاطين بودند. </p>
+          <p align="center" class="style60 style58" dir="rtl"><a href="Farhang.html">بازگشت</a></p>
+          <p align="right" class="style58">&nbsp;</p>          </td>
+        <td width="3%" bgcolor="#FFFFFF">&nbsp;</td>
+      </tr>
+      
+      <tr>
+        <td colspan="3" valign="top"><span class="style2"><img src="images/bala.jpg" width="100%" height="20"></span></td>
+      </tr>
+    </table>
+      <p class="style11">&nbsp;</p></td>
+    <td width="8">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><div align="right" class="style12"></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" id="Gashtvagozar.com">
+  <tr>
+    <td><img src="images/end.jpg" width="980" height="10" alt="" /></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="center"><span class="style1">Powered by<span class="style2">BehinKaran e Zeyton</span> web site designer Team </span></div></td>
+  </tr>
+  <tr>
+    <td><div align="center" class="style1">
+      <div align="center">&copy; 2007 All rights reserved <span class="style4">Gashtvagozar.com </span></div>
+    </div></td>
+  </tr>
+</table>
+</body>
+</html>

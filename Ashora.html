@@ -1,0 +1,310 @@
+﻿<html>
+<head>
+     <title>پایگاه گردشگری</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript" > 
+function showdate() { 
+    week= new Array("يكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه") 
+    months = new Array("فروردين","ارديبهشت","خرداد","تير","مرداد","شهريور","مهر","آبان","آذر","دي","بهمن","اسفند"); 
+    a = new Date(); 
+    d= a.getDay(); 
+    day= a.getDate(); 
+    month = a.getMonth()+1; 
+    year= a.getYear(); 
+    if (year== 0){year=2000;} 
+    if (year<100){year +=1900;} 
+    y=1; 
+    for(i=0;i<3000;i+=4) { 
+        if (year==i) {y=2;} 
+        } 
+    for(i=1;i<3000;i+=4) { 
+        if (year==i) {y=3;} 
+        } 
+if (y==1) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<21)? (month=12, day+=9):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==2) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 20)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<20)? (month=12, day+=10):(month=1, day-=19);   break; 
+            case 4: (day<20)? (month=1, day+=12):(month=2, day-=19);   break; 
+            case 5: (day<21)? (month=2, day+=11):(month=3, day-=20);   break; 
+            case 6: (day<21)? (month=3, day+=11):(month=4, day-=20); break; 
+            case 7: (day<22)? (month=4, day+=10):(month=5, day-=21);   break; 
+            case 8: (day<22)? (month=5, day+=10):(month=6, day-=21);   break; 
+            case 9: (day<22)? (month=6, day+=10):(month=7, day-=21);  break; 
+            case 10:(day<22)? (month=7, day+=9):(month=8, day-=21);    break; 
+            case 11:(day<21)? (month=8, day+=10):(month=9, day-=20);   break; 
+            case 12:(day<21)? (month=9, day+=10):(month=10, day-=20);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==3) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<20)? (month=10, day+=11):(month=11, day-=19); break; 
+            case 2: (day<19)? (month=11, day+=12):(month=12, day-=18); break; 
+            case 3: (day<21)? (month=12, day+=10):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+document.write(week[d]+" "+day+" "+months[month-1]+" "+ year); 
+} 
+
+	function f1(){
+		var d=new Date();
+		document.all.ss1.innerHTML=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+		setTimeout("f1()",1000);
+	}
+
+</script>
+<style type="text/css">
+<!--
+body {    
+	margin-top: 0px;
+	background-image: url(images/bbg.jpg);
+}
+.style1 {
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style4 {color: #003366}
+.style12 {color: #FFFFFF}
+a.style61:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:hover {
+	text-decoration: none;
+	display: block;
+	background-color: #325E8B;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+a.style61:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.style47 {font-family: tahoma; font-size: 11px; color: #FFFFFF; }
+.style49 {font-size: 9pt; font-family: tahoma; color: #FFFFFF; }
+a.style60:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:link{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:hover{
+	color: #FDCD01;
+	text-decoration: none;
+}
+a.style62:link {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:active {
+	text-decoration: none;
+	color: #000000;
+}
+.style51 {
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: Tahoma;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body onLoad="f1();">
+  
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="right"><img src="images/top2_1.jpg" alt="Gashtvagozar.com" width="980" height="150" /></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0">
+  <tr>
+    <td width="254" height="25" bgcolor="#990000" ><div align="center"><span class="style47">
+      <script language="javascript" type="text/javascript">showdate()</script>
+      &nbsp;&nbsp;&nbsp;<span id="ss1"> &nbsp; </span> </span></div></td>
+    <td width="62" bgcolor="#990000"></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="link.html" class="style61">&#1662;&#1740;&#1608;&#1606;&#1583; &#1607;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="contact.html" class="style61">&#1578;&#1605;&#1575;&#1587; &#1576;&#1575; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="about.html" class="style61">&#1583;&#1585;&#1576;&#1575;&#1585;&#1607; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1601;&#1585;&#1607;&#1606;&#1711; &#1608; &#1607;&#1606;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Hotel/Hoteldari.html" class="style61">&#1607;&#1578;&#1604;&#1583;&#1575;&#1585;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1580;&#1607;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Iran/iran.html" class="style61">&#1575;&#1740;&#1585;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="SubNews_Iran.aspx" class="style61">&#1575;&#1582;&#1576;&#1575;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Default.aspx" class="style61">&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;</a></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" bgcolor="#325E8B" >
+  <tr>
+    <td width="4" valign="top">&nbsp;</td>
+    <td width="180" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="75">
+          <param name="movie" value="flash/ketabkhane.swf" />
+          <param name="quality" value="high" />
+          <embed src="flash/ketabkhane.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="75"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td >&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="100">
+          <param name="movie" value="flash/new Library.swf" />
+          <param name="quality" value="high" />
+          <embed src="flash/new Library.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="100"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td >&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="60">
+          <param name="movie" value="flash/Movie2.swf" />
+          <param name="quality" value="high" />
+          <embed src="flash/Movie2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="60"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="100">
+          <param name="movie" value="flash/hotel.swf" />
+          <param name="quality" value="high" />
+          <embed src="flash/hotel.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="100"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="60">
+          <param name="movie" value="flash/sanaye dasti.swf" />
+          <param name="quality" value="high" />
+          <embed src="flash/sanaye dasti.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="60"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="4" valign="top">&nbsp;</td>
+    <td colspan="4" align="right" valign="top"><table width="780" height="671" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="23" height="285" rowspan="2">&nbsp;</td>
+        <td width="296" rowspan="2" align="center" valign="middle"><img src="images/m.jpg" width="277" height="213" /></td>
+        <td width="449" height="35" align="center" valign="middle"><br />
+          <p class="style51" dir="RTL">درسهایی از  عاشورا </p>
+          <p class="style51" dir="RTL">&nbsp;</p></td>
+        <td width="12" rowspan="2" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="190" align="center" valign="top"><div align="justify" dir="rtl" class="style12">
+          <p dir="RTL">ماه محرم،  ماه شناخت است، ماهی است که همه انسانها باید برای الگوبرداری از حریت و آزادی و  آزادمردی درسها بیاموزند. اگرمی خواهند در دنیا آزادمرد زندگی کنند، ماه محرم ماهی  است که بطور شفاف و روشن، حق و باطل مرز خود را به دنیا نشان می دهد.<br>
+            محرم ماهی  است که مسلمان نماها، ریاکاران، عهدشکنان و دنیاپرستان چهره خود را به تمام انسان  های آزادمرد نشان می دهند. <br>
+            ماه محرم  ماهی است که به انسان ها می آموزد، حتی غرق گناه، ظلم و پیرو ظالمان هم که باشی می  توانی همانند حر خود را از این قیود رهایی بخشیده و آزادمرد باشی و در کنار حق و  مرد و مردانگی ستیز کنی و نام خود را در تاریخ تا ابد به ثبت برسانی.</p>        
+          </div></td>
+      </tr>
+      <tr>
+        <td height="79">&nbsp;</td>
+        <td colspan="2" rowspan="3" align="center" valign="top"><div align="justify" dir="rtl" class="style12">
+            <p  dir="RTL"><span dir="RTL"> </span><span dir="RTL"> </span>محرم ماهی  است که ظالمان و دنیاپرستان و بندگان قدرت و شهوت اوج ظالمیت خود را به همه نشان  دادند. همان ماهی که سیاهی و ظلمت در برابر روشنایی و آفتاب قد علم کرد و ثابت کرد  که هرگز ظلم  و ظالم پایدار نبوده و این حق  است که بر باطل پیروز شده و آفتاب روشن چهره زیبا و تابناک خود را از میان ابرهای  تیره و تاریک بیرون کشیده و بر سر مردان آزاده شروع به تابیدن کرده است. . . .<br>
+در عین حال  ماه محرم، ماه عزای حسین (ع) و یاران باوفایش است، حسین که در اوج مظلومیت در  برابر عهد شکنان و بندگان قدرت و شهوت تسلیم نشد و برای احیای دین جدش، رسول خدا  (ص) به مسلخ رفت و جان خود و فرزندان و یارانش را در برابر عظمت خداوند و اسلام و  قرآن فدا کرد و هرچه که داشت در طبخ اخلاص گذاشت تا به دنیا و دنیاپرستان این پیام  را برساند که &quot; اگر دین به عالم نداری لااقل آزاده باش.&quot; هرچند که  شعارها وخطبه های حضرت اباعبدالله الحسین (ع) مطالب بسیار ارزنده و عبرت آموز و  تکان دهنده ای است و توانسته در طول تاریخ اثر خودش را به تمام انسانهای حقیقت جو  و حقیقت طلب بگذارد ولی باز مشاهده می شود که هنوز امام حسین (ع) مظلوم بوده  وخواهد بود وهنوزهم که هنوز است ما نتوانسته ایم پیام ارزشمند و انسان ساز این  امام شهیدمان را خوب درک کنیم و پایبند آن باشیم. <br>
+درست است که  ما در ایام ماه محرم، به یاد شهیدان کربلا مراسم های مختلفی برگزارمی کنیم و این  مراسم در شهرها، استانها، روستاها و حتی کشورهای مختلف به اشکال گوناگون برگزارمی  شود و درجای خود بسیارارزشمند و قابل تقدیر و تحسین است، بنا به فرموده حضرت امام  خمینی (ره)، ما باید مراسم های سنتی ایام محرم را زنده نگه داریم و برشکوه آن  بیفزاییم و اگر در این مراسم گریه می کنیم، گریه زینبی باشد برای افشای چهره کریه  ظلم و ظالمان و اگر مراسم برگزار می کنیم مراسمی باشد برای بیان پیام عاشورا. اما  نبایستی این را فراموش کرد که تاریخ درس عبرت آموزی است نه صرف نگاه کردن و اشک  ریختن و افسوس خوردن، بلکه توجه ما به فرمایش و وصیت بسیار ارزشمند مولای متقیان  علی (ع) باشد که به حسن و حسین (ع) فرمود: من تاریخ گذشتگان را چنان مطالعه و  بررسی کردم که گویی خود را در میان آنها   دیده و می بینم و باید از تاریخ درس ها وعبرت ها آموخت. <br>
+لذا عاشورا درسها  دارد؛ درسهای آموزنده، تکان دهنده وانسان ساز و اگر ما نتوانیم پیام عاشورا را درک  کنیم و اگر به آن پایبند نباشیم، باید بدانیم که در ظلالت و گمراهی هستیم.<br>
+ و اجازه ندهیم این مراسم، خدای ناکرده صرفا  ظاهری و یا تظاهر به حفظ سنتها و باشد و ما را از مسیر حق و عبرت آموزی به دور  بدارد و زمانی به خود بیاییم که خود را در صفت مقابل عاشورایی ها ببینیم. که همان  افتضاحی خواهد شد که متاسفانه بعد از عاشورا اتفاق افتاد و کسانیکه بر حسین (ع) و  فرزندان و یارانش شمشیرها کشیدند و اسبها بر پیکرهای مطهرشان تاختند و آتشها به  خیمه ها زدند، اظهار ندامت و پشیمانی کرده و دست به توبه برداشتند که ما متوجه  نبودیم لشکر پیش روی ما لشکر فرزند رسول خداست که این پشیمانی سودی نداشته و هرگز  نخواهد داشت. باید خود را از قید دنیا و دنیاپرستی، شهوت، قدرت، پول و مقام رهایی  بخشید تا به آزادگی رسید و آزادمرد شد، تابع و بنده حق شد نه زور و قدرت و تزویر و  ریا.<br>
+و امروز روزی  است که ظلم با تمام قدرت خود را به رخ انسانهای آزاده می کشد و این حسین (ع) است  که با ندای مظلومانه خود آزادمردان را به یاری می طلبد. آیا حاضرید لبیک بگویید؟!</p>
+            <div align="center"><a href="Default.aspx" class="style12">              بازگشت</a></div>
+          </div></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="38">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="137">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>        
+	</td>
+    <td width="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><div align="right" class="style12"></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" id="Gashtvagozar.com">
+  <tr>
+    <td><img src="images/end.jpg" width="980" height="10" alt="" /></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="center"><span class="style1">Powered byGashtvagozar web site designer Team </span></div></td>
+  </tr>
+  <tr>
+    <td><div align="center" class="style1">
+      <div align="center">&copy; 2007 All rights reserved <span class="style4">Gashtvagozar.com </span></div>
+    </div></td>
+  </tr>
+</table>
+</body>
+</html>

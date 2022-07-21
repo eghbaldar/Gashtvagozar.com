@@ -1,0 +1,397 @@
+﻿<html>
+<head runat="server">
+     <title>پایگاه گردشگری</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript" > 
+function showdate() { 
+    week= new Array("يكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه") 
+    months = new Array("فروردين","ارديبهشت","خرداد","تير","مرداد","شهريور","مهر","آبان","آذر","دي","بهمن","اسفند"); 
+    a = new Date(); 
+    d= a.getDay(); 
+    day= a.getDate(); 
+    month = a.getMonth()+1; 
+    year= a.getYear(); 
+    if (year== 0){year=2000;} 
+    if (year<100){year +=1900;} 
+    y=1; 
+    for(i=0;i<3000;i+=4) { 
+        if (year==i) {y=2;} 
+        } 
+    for(i=1;i<3000;i+=4) { 
+        if (year==i) {y=3;} 
+        } 
+if (y==1) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<21)? (month=12, day+=9):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==2) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 20)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<20)? (month=12, day+=10):(month=1, day-=19);   break; 
+            case 4: (day<20)? (month=1, day+=12):(month=2, day-=19);   break; 
+            case 5: (day<21)? (month=2, day+=11):(month=3, day-=20);   break; 
+            case 6: (day<21)? (month=3, day+=11):(month=4, day-=20); break; 
+            case 7: (day<22)? (month=4, day+=10):(month=5, day-=21);   break; 
+            case 8: (day<22)? (month=5, day+=10):(month=6, day-=21);   break; 
+            case 9: (day<22)? (month=6, day+=10):(month=7, day-=21);  break; 
+            case 10:(day<22)? (month=7, day+=9):(month=8, day-=21);    break; 
+            case 11:(day<21)? (month=8, day+=10):(month=9, day-=20);   break; 
+            case 12:(day<21)? (month=9, day+=10):(month=10, day-=20);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==3) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<20)? (month=10, day+=11):(month=11, day-=19); break; 
+            case 2: (day<19)? (month=11, day+=12):(month=12, day-=18); break; 
+            case 3: (day<21)? (month=12, day+=10):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+document.write(week[d]+" "+day+" "+months[month-1]+" "+ year); 
+} 
+
+	function f1(){
+		var d=new Date();
+		document.all.ss1.innerHTML=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+		setTimeout("f1()",1000);
+	}
+
+</script>
+<style type="text/css">
+<!--
+body {    
+	margin-top: 0px;
+	background-image: url(images/bbg.jpg);
+}
+.style1 {
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+	font-size: 8px;
+	font-weight: bold;
+}
+.style4 {font-family: tahoma; font-size: 11px; color: #003366;}
+.style11 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; }
+.style12 {color: #FFFFFF}
+.style19 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; }
+.style23 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; font-weight: bold; }
+.style28 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; font-weight: bold; }
+.style36 {font-size: 9px}
+.style37 {color: #CCFF00}
+.style38 {color: #CCCC00}
+.style39 {color: #CC9900}
+.style41 {font-size: 9px; font-family: tahoma; }
+.style44 {font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+.style45 {
+	font-family: tahoma;
+	color: #006699;
+	font-size: 14px;
+	font-weight: bold;
+}
+a.style61:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:hover {
+	text-decoration: none;
+	display: block;
+	background-color: #325E8B;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+a.style61:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.style46 {color: #333333}
+.style47 {font-family: tahoma; font-size: 11px; color: #FFFFFF; }
+.style49 {font-size: 9pt; font-family: tahoma; color: #FFFFFF; }
+a.style60:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:link{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:hover{
+	color: #FDCD01;
+	text-decoration: none;
+}
+a.style62:link {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:active {
+	text-decoration: none;
+	color: #000000;
+}
+.style53 {color: #FFFFFF;
+	font-size: 16px;
+	font-family: Tahoma;
+}
+-->
+</style>
+</head>
+<body onLoad="f1();">
+  
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="right"><img src="images/top2_1.jpg" alt="Gashtvagozar.com" width="980" height="150" /></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0">
+  <tr>
+    <td width="254" height="25" bgcolor="#990000" ><div align="center"><span class="style47">
+      <script language="javascript" type="text/javascript">showdate()</script>
+      &nbsp;&nbsp;&nbsp;<span id="ss1"> &nbsp; </span> </span></div></td>
+    <td width="62" bgcolor="#990000"></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="link.html" class="style61">&#1662;&#1740;&#1608;&#1606;&#1583; &#1607;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="contact.html" class="style61">&#1578;&#1605;&#1575;&#1587; &#1576;&#1575; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="about.html" class="style61">&#1583;&#1585;&#1576;&#1575;&#1585;&#1607; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Farhang.html" class="style61">&#1601;&#1585;&#1607;&#1606;&#1711; &#1608; &#1607;&#1606;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Hotel/Hoteldari.html" class="style61">&#1607;&#1578;&#1604;&#1583;&#1575;&#1585;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1580;&#1607;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Iran/iran.html" class="style61">&#1575;&#1740;&#1585;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="SubNews_Iran.aspx" class="style61">&#1575;&#1582;&#1576;&#1575;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Default.aspx" class="style61">&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;</a></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" bgcolor="#325E8B" id="Gashtvagozar.com">
+  <tr>
+    <td width="6" valign="top">&nbsp;</td>
+    <td width="184" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="75">
+              <param name="movie" value="flash/tabligh1.swf" />
+              <param name="quality" value="high" />
+              <embed src="flash/tabligh1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="75"></embed>
+            </object></td>
+      </tr>
+      <tr>
+        <td background="gashtvagozar.com/www/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="60">
+    <param name="movie" value="flash/sanaye dasti.swf" />
+    <param name="quality" value="high" />
+    <embed src="flash/sanaye dasti.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="60"></embed>
+  </object></td>
+      </tr>
+      <tr>
+        <td background="gashtvagozar.com/www/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="100">
+    <param name="movie" value="flash/hotel.swf" />
+    <param name="quality" value="high" />
+    <embed src="flash/hotel.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="100"></embed>
+  </object></td>
+      </tr>
+      <tr>
+        <td background="gashtvagozar.com/www/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="4" valign="top">&nbsp;</td>
+    <td colspan="4" valign="top"><table width="99%" height="362" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="19" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="19" colspan="3" bgcolor="#9BBCDD">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="3%" bgcolor="#FFFFFF">&nbsp;</td>
+        <td width="94%" bgcolor="#FFFFFF"><p align="center" class="style60 style53">&nbsp;</p>
+          <p align="right" class="style58" dir="rtl">ايران به دنيا يک   هنر مخصوص را عرضه کرده است که در نوع خودش بي مانند است.  (Basil Gray) </p>
+          <p align="right" class="style58" dir="rtl">تاريخ هنر نقاشي در ايران به زمان غارنشيني برميگردد. در غارهاي استان   لرستان تصاوير نقاشي شده از حيوانات و تصاوير کشف شده است.  نقاشيها بوسيله   (W.Semner) بر روي ديواره هاي ساختمانها در ملاير و فارس که به 5000 سال پيش تعلق   دارند کشف شده است. </p>
+          <p align="right" class="style58" dir="rtl">نقاشي هاي کشف شده در مناطق تپه سيالک و لرستان بر روي ظروف سفالي،   ثابت مي کند که هنرمندان اين مناطق با هنر نقاشي آشنايي داشته اند. </p>
+          <DIV align="center">
+            <CENTER>
+              <TABLE borderColor="#111111" cellSpacing="0" cellPadding="2" width="97%" border="0">
+                <TBODY>
+                  <TR>
+                    <TD width="37%"><p align="center" class="style58"><IMG height="296" alt="p114.jpg (58529 bytes)" src="farhanghonar/p114.jpg" width="336"></p></TD>
+                    <TD width="63%"><p align="right" class="style58" dir="rtl">همچنين نقاشيهايي از دوران اشکانيان، نقاشي هاي معدودي بر روي ديوار،   که بيشتر آنها از قسمتهاي شمالي رودخانه فرات بدست آمده، کشف شده است. يکي از اين   نقاشيها منظره يک شکار را نشان ميدهد.  وضعيت سوارها و حيوانات و سبک بکار رفته در   اين نقاشي ما را بياد منياتورهاي ايراني مي اندازد.</p>
+                        <p align="right" class="style58" dir="rtl">در نقاشيهاي دوران هخامنشي، نقاشي از روي چهره بر ساير نقاشي هاي ديگر   تقدم داشت. تناسب و زيبايي رنگها از اين دوران، بسيار جالب توجه است. نقاشي ها بدون   سايه و با همديگر هماهنگي دارند. در بعضي از موارد، سطوح سياه پر رنگ را محدود کرده   اند.</p>
+                      <p align="right" class="style58" dir="rtl">ماني، (پيامبر و نقاش ايراني)، که در قرن سوم زندگي ميکرد، يک نقاش با   تجربه و ماهر بود. نقاشي هاي او يکي از معجزاتش بود.</p>
+                      <p align="right" class="style58" dir="rtl">نقاشي (Torfan) که در صحراي گال استان ترکستان در چين بدست آمد، مربوط   است بسال 840 تا 860 بعد از   ميلاد. </p></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </CENTER>
+          </DIV>
+          <p align="right" class="style58" dir="rtl">اين نقاشي هاي ديوارنما مناظر و تصاوير ايراني را نمايش ميدهند.   همچنين تصاوير شاخه هاي درختي در اين نقاشي ها وجود دارند. باستاني ترين نقاشي هاي   دوران اسلامي، که بسيار کمياب است، در نيمه نخست قرن سيزدهم به وجود   آمده بودند. مينياتورهاي ايراني (طرح هاي خوب و کوچک) بعد از سقوط بغداد در سال   1285 ميلادي بوجود آمدند.  از آغاز قرن چهاردهم کتابهاي خطي بوسيله نقاشي از صحنه   هاي جنگ و شکار تزئين شدند.</p>
+          <DIV align="center">
+            <CENTER>
+              <TABLE borderColor="#111111" cellSpacing="0" width="98%" border="0">
+                <TBODY>
+                  <TR>
+                    <TD width="26%"><p align="center" class="style58"><IMG height="327" alt="p115.jpg (293501 bytes)" src="farhanghonar/p115.jpg" width="220"></p></TD>
+                    <TD width="74%"><p align="right" class="style58" dir="rtl">چين از قرن هفتم به بعد به عنوان يک مرکز هنري، مهمترين انگيزه براي   هنر نقاشي در ايران بود. از آن به بعد يک رابطه بين نقاشان بودائي چيني و نقاشان   ايراني بوجود آمده است.</p>
+                        <p align="right" class="style58" dir="rtl">از لحاظ تاريخي، مهمترين تکامل در هنر ايراني، تقبل طرحهاي چيني بوده   است که با رنگ آميزي که ادراک ويژه هنرمندان ايراني است مخلوط شده بود.  زيبايي و   مهارت خارق العاده نقاشان ايراني واقعاً خارج از توصيف است. در قرن اول اسلامي،   هنرمندان ايراني زينت دادن به کتابها را شروع کردند. </p>
+                      <p align="right" class="style58" dir="rtl">کتابها با سرآغاز و حاشيه هاي زيبا رنگ آميزي و تزئين شده بود. اين   طرحها و روشها از يک نسل به نسل ديگر با همان روش و اصلوب منتقل مي شد، که معروف   است به "هنر روشن سازي".  هنر روشن سازي و زيبا کردن کتابها در زمان سلجوقيان و   مغول و تيموريان پيشرفت زيادي کرد. شهرت نقاشي هاي دوران اسلامي شهرت خود را از   مدرسه بغداد داشت.  </p></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </CENTER>
+          </DIV>
+          <p align="right" class="style58" dir="rtl">مينياتورهاي مدرسه بغداد، کلاً سبک و روشهاي نقاشي هاي معمولي پيش از   دوره اسلامي را گم کرده است.  اين نقاشي هاي اوليه و بدعت کارانه فشار هنري لازم را   ندارند.  مينياتورهاي مدرسه بغداد اصلاً متناسب نيستند. تصاوير نژاد سامي را نشان   ميدهد؛ و رنگ روشن استفاده شده در آن نقاشي را. هنرمندان مدرسه بغداد پس از سالها   رکود مشتاق بودند که آيين تازه اي را بوجود آورده و ابتکار کنند. نگاه هاي مخصوص   اين مدرسه، در طرح حيوانات و با تصاوير شرح دادن داستانها است. </p>
+          <p align="right" class="style58" dir="rtl">اگر چه مدرسه بغداد، هنر پيش از دوره اسلامي را تا حدي در نظر گرفته   بود، که بسيار سطحي و بدوي بود، در همان دوره هنر مينياتور ايراني در تمام قلمرو   اسلامي از آسياي دور تا آفريقا و اروپا پخش شده بود.</p>
+          <DIV align="center">
+            <CENTER>
+              <TABLE borderColor="#111111" cellSpacing="0" cellPadding="2" width="98%" border="0">
+                <TBODY>
+                  <TR>
+                    <TD width="26%"><p align="center" class="style58"><IMG height="341" alt="p116.jpg (239273 bytes)" src="farhanghonar/p116.jpg" width="204"></p></TD>
+                    <TD width="74%"><p align="right" class="style58" dir="rtl">از ميان کتابهاي مصور به سبک بغداد ميتوان به کتاب "کليله و دمنه"   اشاره کرد. تصاوير نامتناسب و بزرگتر از حد معمول رنگ شده است؛ و فقط رنگهاي معدودي   در اين نقاشيها بکار رفته است.</p>
+                        <p align="right" class="style58" dir="rtl">بيشتر کتابهاي خطي قرن سيزدهم، افسانه ها و داستانها، با تصاويري از   حيوانات و سبزيجات تزئين شده است. يکي از قديمي ترين کتابهاي کوچک طراحي شده ايراني   بنام "مناف الحيوان" در سال 1299 ميلادي بوجود آمده است. اين کتاب مشخصات حيوانات   را شرح ميدهد. در اين کتاب تاريخ طبيعي با افسانه در هم آميخته شده است.</p>
+                      <p align="right" class="style58" dir="rtl">موضوعات اين کتاب که تصاوير بسياري دارد، براي آشنايي با هنر نقاشي   ايراني بسيار مهم است. رنگها روشن تر و از روش مدرسه بغداد که روشي قديمي بود جلوتر   است. </p>
+                      <p align="right" class="style58" dir="rtl">پس از هجوم مغولان، يک مدرسه جديد در ايران به نظر ميرسيد. اين مدرسه   تحت تأثير از هنر چيني و سبک مغول بود. اين نقاشي ها همه خشک و بي حرکت و خالص و   يکسان، مانند سبک چيني است.</p></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </CENTER>
+          </DIV>
+          <DIV align="center">
+            <CENTER>
+              <TABLE borderColor="#111111" cellSpacing="0" cellPadding="2" width="98%" border="0">
+                <TBODY>
+                  <TR>
+                    <TD width="70%"><p align="right" class="style58" dir="rtl">بعد از حمله مغول به ايران، آنها تحت تأثير از هنر ايراني، نقاشان و   هنرمندان را تشويق کردند. در ميان نقاشي هاي هنرمندان ايراني ميتوان سبک مغول هم   مشاهده کرد، لطافت ها، ترکيبات آرايشي، و خطوط کوتاه خوب که ميتوان آنها را بشمار   آورد. نقاشي هاي ايراني بصورت خطي و نه ابعادي مي باشد. هنرمندان در اين زمينه از   خود يک خلاقيت و اصالت نشان داده اند. </p>
+                        <p align="right" class="style58" dir="rtl">هنرمندان مغول دادگاه سلطنتي نه فقط به تکنيک بلکه به موضوعات ايراني   هم احترام گذاشتند. يک بخش از کارشان شرح دادن به آثار ادبي ايران مانند شاهنامه   فردوسي بود. ميان موضوعات مختلف بيشترين علاقه آنها به تصويريسم (کتابهاي با تصاوير   زياد) بود. </p>
+                      <p align="right" class="style58" dir="rtl">بر خلاف مدارس مغول و بغداد بيشترين کارها از مدرسه هرات بجا مانده   است. مؤسس اين سبک نقاشي مدرسه هرات بود؛ که از نياکان تيموريان بودند و اين مدرسه   را بخاطر محل تأسيس آن مدرسه هراتي ناميدند.</p></TD>
+                    <TD width="30%"><p align="center" class="style58"><IMG height="295" alt="p118.jpg (179405 bytes)" src="farhanghonar/p118.jpg" width="248"></p></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </CENTER>
+          </DIV>
+          <p align="right" class="style58" dir="rtl">متخصاص هنر نقاشي بر اين باورند، که نقاشي در ايران در دوران تيموري به   اوج خود رسيده بود. در طول اين دوره استادان برجسته اي، همچون کمال الدين بهزاد، يک   متد جديد را به نقاشي ايران عرضه کرد. در اين دوره (تيموريان) که از سال 1370 تا   1405 ميلادي به طول انجاميد؛  هنر نقاشي و کوچک سازي به بالاترين درجه کمال رسيده و   بسياري از نقاشان مشهور عمرشان را بر سر اينکار گذاشته اند. </p>
+          <p align="right" class="style58" dir="rtl">دو کتاب با ارزش از زمان بايسغر باقي مانده است؛ يکي کتاب "کليله و   دمنه" و ديگري کتاب "شاهنامه". هنر کوچک ايراني در کتاب شاهنامه که در سال 1444   ميلادي در شيراز رنگ آميزي شده است، بخوبي مشخص است.</p>
+          <p align="right" class="style58" dir="rtl">يکي از اين طرح ها نشان دادن يک منظره زيبا از يک دادگاه ايراني است که   به سبک چيني رنگ آميزي شده است. کاشي هاي سفيد و آبي ايراني همراه با فرشهاي زيباي   ايراني بصورت هندسي نقش شده است. در يکي از کتابهاي دستنويس "خمسه نظامي گنجوي"،   سيزده مينياتور زيبا بوسيله "ميرک" کشيده شده است. </p>
+          <p align="center" class="style58" dir="rtl"><IMG height="246" alt="p123.jpg (119074 bytes)" src="farhanghonar/p123.jpg" width="422"></p>
+          <p align="right" class="style58" dir="rtl">ساختگي بودن، حساسيت، و هنر نقاشي هاي بغداد از طرحهاي کشيده شده در   کتاب "خمسه نظامي" کاملا مشهود است. اين قطعه با ارزش و فوق العاده هم اکنون در   موزه بريتانيا قرار دارد. در اين قسمت از معماران و مهندسان مشغول ساختمان سازي   هستند. اين نقاشي در سال 1494 ميلادي در هرات نقاشي شده است. </p>
+          <p align="right" class="style58" dir="rtl">بهزاد، بهترين استاد سبک مدرسه هراتي، اين هنر را بسيار بسط داد. او   سبک را اختراع کرد که قبل از او هرگز استفاده نشده بود. </p>
+          <p align="right" class="style58" dir="rtl">يکي از برجسته ترين کارها کتاب شاهنامه فردوسي است که در کتابخانه   گلستان ايران قرار دارد. اين شاهنامه در زمان سلطان بايسغر که يکي از شاهزادگان   تيموري بود؛ به سبک مدرسه هراتي نقاشي شده است. </p>
+          <p align="right" class="style58" dir="rtl">نقاشي هاي اين کتاب از نگاه رنگ آميزي و تناسب ترکيب دهنده تصاوير، در   بالاترين حد زيبايي و استحکام قرار دارد.  </p>
+          <p align="center" class="style58" dir="rtl"><IMG height="212" alt="p124.jpg (88086 bytes)" src="farhanghonar/p124.jpg" width="344"></p>
+          <p align="right" class="style58" dir="rtl">در دوران صفويه مرکزيت هنر به شهر تبريز آمد. و برخي از هنرمندان هم در   شهر قزوين ماندگار شدند. اما اصل سبک نقاشي صفويه در شهر اصفهان بوجود   آمد. </p>
+          <p align="right" class="style58" dir="rtl">مينياتورهاي ايراني، در دوره صفويه در شهر اصفهان، از سبک چيني جدا شده   و قدم در راهي جديد نهاد. اين نقاشان بعدها به سبک طبيعي متمايل شدند.  رضا عباسي   مؤسس سبک "مدرسه نقاشي صفوي" بود. در نقاشي هاي دوران صفوي دگرگوني بسيار عالي در   نقاشي ايراني رخ داد.</p>
+          <p align="right" class="style58" dir="rtl">طرحهاي اين دوره يکي از بهترين و زيبا ترين و با سليقه ترين طرحهاي   نقاشان ايراني است که نشان دهنده ذوق نقاشان ايراني است. مينياتورهاي خلق شده در   اين دوره(مدرسه صفوي)،  هيچکدام منحصراً با هدف مزين کردن کتابها کشيده نشده اند.   سبک صفوي بسيار بهتر و ملايم تر از سبک مدرسه تيموريان (هراتي) و مخصوصاً سبک مغولي   است. </p>
+          <DIV align="center">
+            <CENTER>
+              <TABLE borderColor="#111111" cellSpacing="0" cellPadding="2" width="98%" border="0">
+                <TBODY>
+                  <TR>
+                    <TD width="28%"><p align="center" class="style58"><IMG height="328" alt="p117.jpg (291231 bytes)" src="farhanghonar/p117.jpg" width="227"></p></TD>
+                    <TD width="72%"><p align="justify" class="style58" dir="rtl">در نقاشي نقاشان دوران صفوي آشکار شدن   تخصص آنها در اين رشته بوضوح مشخص است. بهترين معرف از اين دوره نقاشي هاي هستند که   در عمارت چهل ستون و عالي قاپو کشيده شده است.  </p>
+                        <p align="right" class="style58" dir="rtl">در نقاشي هاي صفوي، موضوع اصلي شکوه و زيبايي اين دوره است. موضوعات   نقاشي ها بيشتر حول محور بارگاه سلاطين، اشراف زادگان، کاخ هاي زيبا، مناظر زيبا   و صحنه هايي از جنگ ها است. </p>
+                      <p align="right" class="style58" dir="rtl">در اين نقاشي ها انسانها با لباسهاي پرخرج نخ کشي، صورتهايي زيبا و   مجسمه هاي ظريف رنگين به طور پر هيجان روشن به تصوير کشيده شده است. هنر نقاشي در   طول دوران صفوي هم زياد و هم داراي کيفيت بهتر شد. در اين نقاشي ها آزادي بيشتر و   مهارت و دقت بيشتر مشهود است. </p>
+                      <p align="right" class="style58" dir="rtl">هنرمندان بيشتر به اصول کلي پرداخته و از جزئيات غير ضروري اجتناب، که   در شيوه هراتي و تبريزي بکار رفته بود، خودداري کردند. صافي خطوط، بيان زود احساسات   و متراکم شدن موضوعات از مشخصات سبک نقاشي صفوي است. از آنجاييکه در اواخر دوران   صفوي، از لحاظ جنبه فکري اختلافات جزئي در رنگ آميزي بوجود آورد، ميتوان به ظهور   سبک اروپايي در اين نقاشي ها پي برد. </p></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </CENTER>
+          </DIV>
+          <p align="right" class="style58" dir="rtl">نقاشي هاي دوران قاجاريه (قرن شانزدهم ميلادي) يک ترکيبي از سبک هنرهاي   اروپايي کلاسيک و سبک و تکنيک مينياتورهاي دوران صوفي است. در اين دوران "محمد   غفاري (کمال الملک)" سبک کلاسيک اروپايي را در ايران رواج داد. در اين دوران سبکي   از نقاشي بوجود آمد که بنام "قهوه خانه" شناخته شد. اين نوع نقاشي يک پديده جديد در   تاريخ هنر ايراني است. سبک "قهوه خانه" عامه پسند و مذهبي است. موضوعات اين سبک   بيشتر تصاوير پيامبران و امامان، شعائر مذهبي، جنگها و نام آوران ملي بودند. "قهوه   خانه ها" رفته رفته جاي خود را در بين مردم معمولي باز نمودند. در اين مکان داستان   سرايان و نقالان داستانهاي حماسي و مذهبي را براي مردم بازگو ميکردند. هنرمندان   همان داستانها را بر روي ديوارهاي اين "قهوه خانه ها" نقاشي کرده بودند. قبلا در   گذشته که پادشاهان و اشراف زادگان نقاشان را پشتيباني ميکردند؛ اما اينبار هنرمندان   به درخواست مردم عادي آن مناظر را بر روي ديوارها ميکشيدند و به اين کار علاقمند   بودند.</p>
+          <p align="right" class="style58" dir="rtl">در بيشتر اين قهوه خانه ها اين مناظر که بيشتر به درخواست عمومي بود   رنگ آميزي شده بود. زيباترين مثالها در موزه اصلي تهران و همينطور در بعضي از موزه   هاي خصوصي داخل و خارج از کشور نگهداري ميشود. نقاشي هاي ايراني، يک نوع ملاحت را   که بي شباهت به هر چيز ديگر است به تماشاگر عرضه ميکند. آنها يک ارتباط بيکران با   داستانهاي حماسي نگه داشته اند. نقاشي ايراني، بعنوان يکي از بزرگترين سبکهاي نقاشي   در آسيا مطرح است. آسمان هاي روشن (آبي)، زيبايي شگفت انگيز شکوفه ها و در ميان   آنها انسانهايي که دوست ميدارند و انسانهايي که تنفر دارند، خوشگذران و افسرده، به   موضوعات مختلف نقاشان ايراني شکل ميدهند.  </p>
+          <p align="center" class="style58" dir="rtl"><IMG height="248" alt="p126.jpg (109580 bytes)" src="farhanghonar/p126.jpg" width="464"></p>
+          <p align="center" class="style58" dir="rtl">&nbsp;</p>
+          <p dir="rtl" align="right"><BR>
+          </p>
+          <p align="center" class="style59">&nbsp;</p>
+          <p align="center" class="style60 style58" dir="rtl"><a href="Farhang.html">بازگشت</a></p>
+          <p align="right" class="style58">&nbsp;</p>          </td>
+        <td width="3%" bgcolor="#FFFFFF">&nbsp;</td>
+      </tr>
+      
+      <tr>
+        <td colspan="3" valign="top"><span class="style2"><img src="images/bala.jpg" width="100%" height="20"></span></td>
+      </tr>
+    </table>
+      <p class="style11">&nbsp;</p></td>
+    <td width="8">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><div align="right" class="style12"></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" id="Gashtvagozar.com">
+  <tr>
+    <td><img src="images/end.jpg" width="980" height="10" alt="" /></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="center"><span class="style1">Powered by<span class="style2">BehinKaran e Zeyton</span> web site designer Team </span></div></td>
+  </tr>
+  <tr>
+    <td><div align="center" class="style1">
+      <div align="center">&copy; 2007 All rights reserved <span class="style4">Gashtvagozar.com </span></div>
+    </div></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,339 @@
+﻿<html>
+<head runat="server">
+     <title>پایگاه گردشگری</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript" > 
+function showdate() { 
+    week= new Array("يكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه") 
+    months = new Array("فروردين","ارديبهشت","خرداد","تير","مرداد","شهريور","مهر","آبان","آذر","دي","بهمن","اسفند"); 
+    a = new Date(); 
+    d= a.getDay(); 
+    day= a.getDate(); 
+    month = a.getMonth()+1; 
+    year= a.getYear(); 
+    if (year== 0){year=2000;} 
+    if (year<100){year +=1900;} 
+    y=1; 
+    for(i=0;i<3000;i+=4) { 
+        if (year==i) {y=2;} 
+        } 
+    for(i=1;i<3000;i+=4) { 
+        if (year==i) {y=3;} 
+        } 
+if (y==1) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<21)? (month=12, day+=9):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==2) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 20)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break; 
+            case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break; 
+            case 3: (day<20)? (month=12, day+=10):(month=1, day-=19);   break; 
+            case 4: (day<20)? (month=1, day+=12):(month=2, day-=19);   break; 
+            case 5: (day<21)? (month=2, day+=11):(month=3, day-=20);   break; 
+            case 6: (day<21)? (month=3, day+=11):(month=4, day-=20); break; 
+            case 7: (day<22)? (month=4, day+=10):(month=5, day-=21);   break; 
+            case 8: (day<22)? (month=5, day+=10):(month=6, day-=21);   break; 
+            case 9: (day<22)? (month=6, day+=10):(month=7, day-=21);  break; 
+            case 10:(day<22)? (month=7, day+=9):(month=8, day-=21);    break; 
+            case 11:(day<21)? (month=8, day+=10):(month=9, day-=20);   break; 
+            case 12:(day<21)? (month=9, day+=10):(month=10, day-=20);  break; 
+       default:          break; 
+        } 
+        } 
+if (y==3) { 
+        year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621; 
+
+        switch (month) { 
+            case 1: (day<20)? (month=10, day+=11):(month=11, day-=19); break; 
+            case 2: (day<19)? (month=11, day+=12):(month=12, day-=18); break; 
+            case 3: (day<21)? (month=12, day+=10):(month=1, day-=20);   break; 
+            case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);   break; 
+            case 5: 
+            case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break; 
+            case 7: 
+            case 8: 
+            case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);  break; 
+            case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);    break; 
+            case 11: 
+            case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);  break; 
+       default:          break; 
+        } 
+        } 
+document.write(week[d]+" "+day+" "+months[month-1]+" "+ year); 
+} 
+
+	function f1(){
+		var d=new Date();
+		document.all.ss1.innerHTML=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+		setTimeout("f1()",1000);
+	}
+
+</script>
+<style type="text/css">
+<!--
+body {    
+	margin-top: 0px;
+	background-image: url(../Iran/images/bbg.jpg);
+}
+.style1 {
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style4 {color: #003366}
+.style11 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; }
+.style12 {color: #FFFFFF}
+a.style61:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.style61:hover {
+	text-decoration: none;
+	display: block;
+	background-color: #325E8B;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+a.style61:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.style47 {font-family: tahoma; font-size: 11px; color: #FFFFFF; }
+.style49 {font-size: 9pt; font-family: tahoma; color: #FFFFFF; }
+a.style60:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:link{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.style60:hover{
+	color: #FDCD01;
+	text-decoration: none;
+}
+a.style62:link {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a.style62:active {
+	text-decoration: none;
+	color: #000000;
+}
+a.style63:link {
+	text-decoration: none;
+	color: #0066FF;
+}
+a.style63:visited {
+	text-decoration: none;
+	color: #0066FF;
+}
+a.style63:hover {
+	text-decoration: none;
+	color: #0066FF;
+}
+a.style63:active {
+	text-decoration: none;
+	color: #0066FF;
+}
+.style54 {font-family: tahoma;
+	font-size: 13px;
+}
+.style61 {color: #000000; }
+.style62 {font-family: tahoma; font-size: 13px; font-weight: bold; }
+.style63 {color: #0066FF}
+.style64 {
+	font-family: tahoma;
+	font-size: 14px;
+	color: #CC0000;
+	font-weight: bold;
+}
+.style65 {font-size: 13px}
+-->
+</style>
+</head>
+<body onLoad="f1();">
+  
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="right"><img src="../images/top2_1.jpg" alt="Gashtvagozar.com" width="980" height="150" /></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0">
+  <tr>
+    <td width="254" height="25" bgcolor="#990000" ><div align="center"><span class="style47">
+      <script language="javascript" type="text/javascript">showdate()</script>
+      &nbsp;&nbsp;&nbsp;<span id="ss1"> &nbsp; </span> </span></div></td>
+    <td width="62" bgcolor="#990000"></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../link.html" class="style61">&#1662;&#1740;&#1608;&#1606;&#1583; &#1607;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../contact.html" class="style61">&#1578;&#1605;&#1575;&#1587; &#1576;&#1575; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../about.html" class="style61">&#1583;&#1585;&#1576;&#1575;&#1585;&#1607; &#1605;&#1575;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1601;&#1585;&#1607;&#1606;&#1711; &#1608; &#1607;&#1606;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="Hoteldari.html" class="style61">&#1607;&#1578;&#1604;&#1583;&#1575;&#1585;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="#" class="style61">&#1580;&#1607;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../Iran/iran.html" class="style61">&#1575;&#1740;&#1585;&#1575;&#1606;&#1711;&#1585;&#1583;&#1740;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../SubNews_Iran.aspx" class="style61">&#1575;&#1582;&#1576;&#1575;&#1585;</a></div></td>
+    <td width="80" bgcolor="#990000" class="style49"><div align="center"><a href="../Default.aspx" class="style61">&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;</a></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" bgcolor="#325E8B" id="Gashtvagozar.com">
+  <tr>
+    <td width="6" valign="top">&nbsp;</td>
+    <td width="184" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="60">
+          <param name="movie" value="../flash/sanaye dasti.swf" />
+          <param name="quality" value="high" />
+          <embed src="../flash/sanaye dasti.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="60"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td background="../Iran/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="180" height="100">
+          <param name="movie" value="../flash/hotel.swf" />
+          <param name="quality" value="high" />
+          <embed src="../flash/hotel.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="100"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td background="../Iran/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td background="../Iran/images/noghte.jpg">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="4" valign="top">&nbsp;</td>
+    <td colspan="4" valign="top"><table width="99%" height="397" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="19" colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="19" colspan="2" bgcolor="#9BBCDD"><div align="center"></div></td>
+      </tr>
+      <tr>
+        <td width="51%" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+        <td width="49%" height="38" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="286" colspan="2" align="center" valign="top" bgcolor="#FFFFFF"><table width="734" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="89">&nbsp;</td>
+              <td width="286" colspan="2">&nbsp;</td>
+              <td width="359" colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="2">&nbsp;</td>
+              <td colspan="2" rowspan="2" align="center"><img src="images/hotel-view.jpg" width="286" height="186"></td>
+              <td colspan="2" align="right"><p class="style64" dir="RTL">فناوري اطلاعات، هتل 7‌ستاره دنيا را مديريت مي‌كند</p></td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top"><p dir="RTL"><div dir="rtl" align="justify" class="style54">
+                <p>بخش اعظم  درآمدهاي برج‌العرب به زيرساخت‌هاي فناوري اطلاعات متناسب با استانداردهاي جهاني  اختصاص مي‌يابد.
+                  </p>
+</p>
+                    <p dir="RTL">در سال جاري ميلادي مديران اين هتل  بيش از 8/6 ميليارد دلار را در زمينه <span dir="LTR">IT</span><span dir="RTL"> </span><span dir="RTL"> </span> و خدمات وابسته به آن  هزينه كرده اند. برج‌العرب كه ظاهري شبيه بادبان كشتي دارد و نماد دبي محسوب مي‌شود  يكي از مجلل‌ ترين هتل‌هاي دنياست كه هر روزه از هزاران مهمان داخلي و خارجي  پذيرايي مي‌كند. مقامات عربي سعي كرده‌اند در داخل اين برج 321 متري آخرين  دستاوردها و فناوري‌هاي روز دنيا را به‌كار برند و بهترين خدمات ممكن را به مردم  ارايه دهند. </p>
+              </div></td>
+            </tr>
+            <tr>
+              <td colspan="5" class="style54" ><div dir="rtl" align="justify" class="style54"><p dir="RTL">بخش اعظم درآمدهاي برج‌العرب به  زيرساخت‌هاي فناوري اطلاعات متناسب با استانداردهاي جهاني اختصاص مي‌يابد. در سال  جاري ميلادي مديران اين هتل بيش از 8/6 ميليارد دلار را در زمينه <span dir="LTR">IT</span><span dir="RTL"> </span><span dir="RTL"> </span> و  خدمات وابسته به آن هزينه كرده اند. يكي از بهترين اقداماتي كه تا كنون در اين هتل  صورت گرفته و افتخارات فراواني را براي آن‌ كسب كرده، راه‌اندازي خدمات تلفني <span dir="LTR">IP</span><span dir="RTL"> </span><span dir="RTL"> </span> بوده است. در اين طرح مديران برج‌العرب سيستم <span dir="LTR">Avaya VoIP</span><span dir="RTL"> </span><span dir="RTL"> </span> را با كمك شركت <span dir="LTR">East Meets West</span><span dir="RTL"> </span><span dir="RTL"> </span> راه‌اندازي كرده اند و موفق شده اند جايزه بهترين خدمات فناوري  امارات موسوم به <span dir="LTR">NME 2007 Award</span><span dir="RTL"> </span><span dir="RTL"> </span> را از آن خود كنند.به گفته فردريك سبتي (<span dir="LTR">Frederick Sabty</span><span dir="RTL"> </span><span dir="RTL"> </span>) مدير <span dir="LTR">IT</span><span dir="RTL"> </span><span dir="RTL"> </span> بزرگ‌ترين هتل خاورميانه، در حالي كه تعداد طرح‌هاي  وابسته به فناوري در اين مكان بسيار افزايش يافته است، همواره تلاش  مي‌شود تعداد سيستم‌هاي جديد آن كه وابسته به  گروه جميرا (<span dir="LTR">Jumeirah</span><span dir="RTL"> </span><span dir="RTL"> </span>) است نيز بيشتر شود. او مي‌گويد:  ما از سه سال پيش تصميم گرفتيم تمام سيستم‌هاي  ديجيتالي و الكترونيكي اين محل را به‌روز كنيم. بر اين اساس، بهترين شركت‌هاي  كامپيوتري و اينترنتي در سراسر دنيا شناسايي شدند تا از خدمات آنها استفاده شود.  با توجه به اينكه زيبايي و كارآمدي همواره در كنار هم وجود ندارند، پيدا كردن شركت‌هايي  كه بتوانند محصولات زيبا و كارآمد را به دست ما برسانند بسيار مشكل بود. </p> 
+                  <p dir="RTL">فردريك سبتي در ادامه خاطرنشان مي‌كند:  ما در مراحل نخست فعاليت خود سعي كرديم از  خدمات شركت‌هاي كوچك و محلي استفاده كنيم و در عين حال از جانب شركت‌هاي بزرگ و  بين‌المللي پشتيباني شويم. ما قصد نداشتيم محصولات موردنظر خود را از شركتي  خريداري كنيم كه پس از گذشت مدت كوتاهي تعطيل شود. اين شركت‌ها هرچند هم كه خدمات  مناسبي را ارايه مي‌دادند، مي‌توانستند خسارات مالي فراواني را به ما وارد كنند. </p>
+                  <p dir="RTL">گروه <span dir="LTR">IT</span><span dir="RTL"> </span><span dir="RTL"> </span> برج بادباني‌شكل دبي به‌همراه  متخصصان مركز جميرا مهم‌ترين معيارهاي خود را پيش از راه‌اندازي سيستم <span dir="LTR">VoIP</span><span dir="RTL"> </span><span dir="RTL"> </span> مشخص كردند. با توجه به اينكه ساختمان برج‌العرب از جنبه‌هاي مختلف بزرگ ‌ترين  دارايي امارات محسوب مي‌شود، هرگونه تصميم‌گيري در آن مي‌تواند نتايج قابل‌ملاحظه‌اي  را در پي داشته باشد. مديران مركز برج‌العرب تنها افرادي هستند كه براي راه‌اندازي  سرويس‌هاي مختلف <span dir="LTR">IT</span><span dir="RTL"> </span><span dir="RTL"> </span> و خريد دستگاه‌ها و تجهيزات جديد فناوري تصميم‌گيري  ‌كنند. </p>
+                  <p dir="RTL">متخصصان مركز <span dir="LTR">Avaya/EMW</span><span dir="RTL"> </span><span dir="RTL"> </span> كه وظيفه اجراي اين طرح  عظيم را در برج‌العرب برعهده داشتند، سعي كردند در تمام مدت سيستم‌هاي پيشين را  فعال نگه‌ دارند. اين هتل هفت سال پيش از راه‌اندازي سيستم‌ هاي جديد از فناوري <span dir="LTR">Avaya PBX</span><span dir="RTL"> </span><span dir="RTL"> </span> استفاده مي‌كرد كه تاكنون به‌روز نشده بود. طرح جديد راه‌اندازي خدمات <span dir="LTR">VoIP</span><span dir="RTL"> </span><span dir="RTL"> </span> در اين مركز به‌گونه‌اي بود كه سيستم‌هاي پيشين بدون هرگونه اختلالي به‌روز شدند و  در اختيار مهمانان قرار گرفتند. </p>
+                  <p dir="RTL">مديران مرتفع‌ترين هتل دنيا از سال  2003 طرح به‌روزرساني سيستم مخابراتي <span dir="LTR">PBX</span><span dir="RTL"> </span><span dir="RTL"> </span> و راه‌اندازي سيستم <span dir="LTR">VoIP</span><span dir="RTL"> </span><span dir="RTL"> </span> را براي 202 واحد اين مركز آغاز كردند. يكي از مزاياي سيستم مخابراتي مبتني بر <span dir="LTR">IP</span><span dir="RTL"> </span><span dir="RTL"> </span> براي برج‌العرب فراهم كردن بستري بود كه به كمك آن افراد مي‌توانستند از همه اتاق‌هاي  هتل به‌طور بي‌سيم به اينترنت متصل شوند و خدمات مخابراتي <span dir="LTR">Avaya</span><span dir="RTL"> </span><span dir="RTL"> </span> را به‌كار برند. مديران  هتل برج‌العرب در طول اجراي اين طرح همواره سعي كردند فناوري‌هايي را به كار برند  كه روش‌هاي استفاده از آن بسيار آسان باشد. </p>
+                  <p dir="RTL">اين امر باعث مي‌شد هتل تازه‌تاسيس  بادباني‌شكل ظرف مدت‌زمان كوتاهي صاحبان خود را مشهور و ثروتمند كند. سبتي در  ادامه صحبت‌هاي خود تشريح مي‌كند:  برخي  مهمانان براي حصول اطمينان از خدماتي كه قرار است دراختيار آنها قرار گيرد. از ما  مي‌خواهند اطلاعات كاملي را در مورد فناوري‌هاي برج‌العرب به آنها ارايه دهيم. ما  به مهمان‌‌هاي خود دستگاه‌هاي كنترل از راه‌دوري را مي‌دهيم كه به كمك آن مي‌توانند  همه سيستم‌هاي الكترونيكي اتاق خود را زيرنظر بگيرند و تنها با فشار يك دكمه آنها  را كنترل كنند. اين قبيل سيستم‌هاي كوچك مي‌توانند مهمانان ما را راضي نگه دارند. </p>
+                  <p dir="RTL">براي راحتي هرچه بيشتر افرادي كه قصد  اقامت در برج‌العرب را دارند، كارشناسان اين مركز همواره سعي كرده‌اند با استفاده  از قوه خلاقيت خود طرح‌هايي را در زمينه <span dir="LTR">IT</span><span dir="RTL"> </span><span dir="RTL"> </span> ارايه دهند كه تا كنون در  هيچ كجاي دنيا ارايه نشده است. طي ماه آينده يكي ازبزرگ‌ترين گام‌ها براي ارتقاي  شبكه داخلي برج‌العرب برداشته خواهد شد كه در آن كاربران مي‌توانند خدمات <span dir="LTR">VoIP</span><span dir="RTL"> </span><span dir="RTL"> </span> را از طريق سرويس <span dir="LTR">Wi-Fi</span><span dir="RTL"> </span><span dir="RTL"> </span> به‌كار بندند. </p>
+                  <p dir="RTL">با اين خدمات جديد كاربران در هرجاي  هتل كه باشند مي‌توانند به تلفن‌هاي خود پاسخ دهند و به‌ اينترنت دسترسي داشته  باشند. سبتي و گروهش معتقدند كه در اجراي اين طرح نيز موفق خواهند شد و اين سرويس‌ها  را به صورت كاملا ايمن عرضه خواهند كرد. كارشناسان بر اين باورند كه با ورود سيستم  ‌عامل ويندوز ويستا در خاورميانه و افزايش حضور شركت‌هاي امنيتي در منطقه، فرصت  بيشتري براي رشد <span dir="LTR">IT</span><span dir="RTL"> </span><span dir="RTL"> </span> در برج‌العرب به‌وجود آمده است. </p>
+                  <p dir="RTL">اين طور كه گفته مي‌شود، مديران اين  هتل تصميم گرفته‌اند كه به‌دنبال امضاي قراردادهاي جديد با شركت مايكروسافت، خدمات  بهتري را به مهمانان خود ارايه دهند. اگر چه هنوز اين قرارداد منعقد نشده، غول نرم‌افزاري  دنيا تعهد كرده است كه آخرين خدمات خود را در اختيار مشتريان اين هتل بگذارد. برج‌العرب  از نظر به‌كارگيري فناوري‌هاي جديد به عنوان مجهزترين هتل دنيا محسوب مي‌شود. </p>
+                  <p dir="RTL">اتاق‌هاي اين هتل به لپ‌تاپ مجهز شده  اند كه روي هر كدام از آنها نسخه <span dir="LTR">Enterprise Edition</span><span dir="RTL"> </span><span dir="RTL"> </span> سيستم ‌عامل ويندوز ويستا  نصب است. سبتي مي‌گويد:  ما همواره در  تلاشيم از نظر به‌كارگيري سيستم‌هاي جديد مبتني بر فناوري ارتباطات و اطلاعات  متمايز باشيم. امروز ادعا مي‌كنيم كه بهترين سيستم‌هاي ارتباطي و اطلاعاتي جهان را  به مهمانان خود ارايه مي‌دهيم و در آينده نزديك اين امكان را براي مردم فراهم  خواهيم كرد كه به صورت بي‌سيم از اينترنت استفاده كنند، پست الكترونيكي خود را چك  كنند، به صورت چندرسانه‌اي با دوستان خود در ارتباط باشند و ... </p>
+                  <p dir="RTL">سبتي همچنين خاطرنشان مي‌كند:  مهمانان نخستين اولويت ما هستند. طبق آخرين  تصميمات اتخاد شده در هيات‌مديره برج‌العرب، ما در هفته‌هاي آتي قصد داريم سرويس‌هاي  اينترنتي و ارتباطي خود را ارتقا دهيم. ما براي ارايه سرويس‌هاي بهتر، از شركت <span dir="LTR">KalSoft</span><span dir="RTL"> </span><span dir="RTL"> </span> كه يكي از بزرگ‌ترين همكاران مايكرو سافت محسوب مي‌شود دعوت كرده‌ايم در اين هتل  حضور يابد تا 206 لپ‌‌تاپ را همراه با بسته نرم‌ افزاري <span dir="LTR">Office  2007</span><span dir="RTL"> </span><span dir="RTL"> </span> و سيستم‌عامل  ويندوز ويستا در 202 اتاق هتل نصب و راه‌اندازي كند.</p>
+              </div></td>
+              </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2">&nbsp;</td>
+              <td colspan="2" align="right" class="style64">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="5" align="center"><a href="Hoteldari.html"></a>                <p dir="RTL"><a href="Hoteldari.html"></a><a href="Hoteldari.html">بازگشت</a></td>
+              </tr>
+          </table>          
+          <p align="right" class="style54"> </td>
+        </tr>
+      <tr>
+        <td colspan="2" valign="top"><span class="style2"><img src="../images/bala.jpg" width="783" height="20"></span></td>
+      </tr>
+    </table>    
+    <p class="style11">&nbsp;</p></td>
+    <td width="8">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><div align="right" class="style12"></div></td>
+  </tr>
+</table>
+<table width="980" border="0" cellpadding="0" cellspacing="0" id="Gashtvagozar.com">
+  <tr>
+    <td><img src="../Iran/images/end.jpg" width="980" height="10" alt="" /></td>
+  </tr>
+</table>
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="center"><span class="style1">Powered byGashtvagozar web site designer Team </span></div></td>
+  </tr>
+  <tr>
+    <td><div align="center" class="style1">
+      <div align="center">&copy; 2007 All rights reserved <span class="style4">Gashtvagozar.com </span></div>
+    </div></td>
+  </tr>
+</table>
+
+</body>
+</html>
